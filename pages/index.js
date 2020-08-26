@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
-export default function Index({ title, description, ...props }) {
+export default function Index({ title, description, posts, ...props }) {
   return (
     <Layout pageTitle={title}>
       <h1 className="title">Welcome to blog!</h1>
@@ -14,23 +14,12 @@ export default function Index({ title, description, ...props }) {
         {description}
       </p>
       <main>
-        <PostList posts="{posts}" />
+        <PostList posts={posts} />
       </main>
     </Layout>
   )
 }
 
-//export async function getStaticProps() {
-  //const configData = await import(`../site-config.json`)
-
-  //return {
-    //props: {
-      //title: configData.default.title,
-      //description: configData.default.description,
-    //}
-  //}
-
-//}
 export async function getStaticProps() {
   const configData = await import(`../site-config.json`)
 
@@ -50,7 +39,6 @@ export async function getStaticProps() {
     })
     return data
   })(require.context('../_posts', true, /\.md$/))
-
 
   return {
     props: {
