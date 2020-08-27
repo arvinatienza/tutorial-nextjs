@@ -10,7 +10,7 @@ export default function PostList({ posts }) {
       <ul>
         {posts && posts.map((post) => {
           return (
-            <li key={post.slug}>
+            <li className="p-5 mb-7 bg-color-red" key={post.slug}>
               <Link href={{ pathname: `/post/${post.slug}` }}>
                 <a>{post.frontmatter.title}</a>
               </Link>
