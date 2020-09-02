@@ -5,8 +5,9 @@ export default function Header() {
     <>
       <header className="header">
         <nav>
-          <Link href="/"><a>Home</a></Link>
-          <Link href="/about"><a>About</a></Link>
+          <Link href="/"><a>Home</a></Link> &nbsp;|&nbsp;
+          <Link href="/about"><a>About</a></Link> &nbsp;|&nbsp;
+          <Link href="/podcasts"><a>Podcasts</a></Link> &nbsp;|&nbsp;
           <Link href="/contact"><a>Contact</a></Link>
         </nav>
       </header>
