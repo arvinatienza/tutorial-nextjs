@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function PostList({ posts }) {
+export default function BlogPostList({ posts }) {
 
   if (posts === 'undefined') return null
 
@@ -11,7 +11,7 @@ export default function PostList({ posts }) {
         {posts && posts.map((post) => {
           return (
             <li className="p-5 mb-7" key={post.slug}>
-              <Link href={{ pathname: `/post/${post.slug}` }}>
+              <Link href={{ pathname: `/blogs/${post.slug}` }}>
                 <a>{post.frontmatter.title}</a>
               </Link>
             </li>
