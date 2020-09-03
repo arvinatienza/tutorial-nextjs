@@ -3,8 +3,8 @@ import Head from 'next/head'
 //import MainNavigation from '../components/main-navigation.js'
 import matter from 'gray-matter'
 
-import Layout from '../../components/Layout'
-import BlogPostList from '../../components/BlogPostList'
+import Layout from '@components/Layout'
+import BlogPostList from '@components/BlogPostList'
 
 export default function Index({ title, description, posts, ...props }) {
   return (
@@ -21,7 +21,7 @@ export default function Index({ title, description, posts, ...props }) {
 }
 
 export async function getStaticProps() {
-  const configData = await import(`../../site-config.json`)
+  const configData = await import(`site-config.json`)
 
   const posts = ((context) => {
     const keys = context.keys()

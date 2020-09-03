@@ -1,4 +1,5 @@
-import Layout from '../components/Layout'
+import Layout from '@components/Layout'
+import ContactForm from '@components/ContactForm'
 
 export default function About({ title, description, ...props }) {
   return (
@@ -10,9 +11,7 @@ export default function About({ title, description, ...props }) {
           {description}
         </p>
 
-        <p>
-          Form
-        </p>
+        <ContactForm />
       </Layout>
     </>
   )

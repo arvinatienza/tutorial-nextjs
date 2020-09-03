@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import Layout from '../../components/Layout'
-import PodcastList from '../../components/PodcastList'
+import Layout from '@components/Layout'
+import PodcastList from '@components/PodcastList'
 
 const RSS_URL = process.env.ANCHORFM_RSS_URL
 const PREFIX = process.env.ANCHORFM_URL_PREFIX
@@ -23,7 +23,7 @@ export default function Index({ title, description, podcasts, ...props }) {
 }
 
 export async function getStaticProps() {
-  const configData = await import(`../../site-config.json`)
+  const configData = await import(`site-config.json`)
 
   let podcasts = [];
 
